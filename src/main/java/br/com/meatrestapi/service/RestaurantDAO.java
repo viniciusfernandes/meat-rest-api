@@ -12,7 +12,6 @@ public class RestaurantDAO extends AbstractDAO<Restaurant, String> {
 		for (Restaurant r : lRestaurant) {
 			save(r);
 		}
-
 	}
 
 }

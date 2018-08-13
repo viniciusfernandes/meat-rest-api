@@ -1,12 +1,21 @@
 package br.com.meatrestapi.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "tb_restaurant")
-public class Restaurant {
+public class Restaurant implements Serializable {
+	public Restaurant() {
+	}
+
+	public Restaurant(String id) {
+		super();
+		this.id = id;
+	}
 
 	private String about;
 

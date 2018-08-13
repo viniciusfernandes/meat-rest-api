@@ -10,56 +10,56 @@
       "name": "Aline",
       "date": "2016-12-12T18:25:43",
       "rating": 3,
-      "comments": "NÃO recomendo. O recheio é só um creme, não tem camarão e nem carne",
+      "comments": "NaO recomendo. O recheio eh so um creme, nao tem camarao e nem carne",
       "restaurantId": "bread-bakery"
     },
     {
       "name": "Renata",
       "date": "2016-12-12T18:25:43",
       "rating": 2,
-      "comments": "Não foi muito agradável ao nosso paladar, e eu e meu esposo no outro dia passamos super mal. Pode até ter sido outra coisa, mas...",
+      "comments": "Nao foi muito agradavel ao nosso paladar, e eu e meu esposo no outro dia passamos super mal. Pode ateh ter sido outra coisa, mas...",
       "restaurantId": "bread-bakery"
     },
     {
       "name": "Renata",
       "date": "2016-12-12T18:25:43",
       "rating": 5,
-      "comments": "Nunca deixou na mão, comida sempre deliciosa.",
+      "comments": "Nunca deixou na mao, comida sempre deliciosa.",
       "restaurantId": "bread-bakery"
     },
     {
       "name": "Daniela",
       "date": "2017-01-23T18:25:43",
       "rating": 4,
-      "comments": "Sanduíche muito bom! Já pedi diversas vezes sempre bom!",
+      "comments": "Sanduiche muito bom! Ja pedi diversas vezes sempre bom!",
       "restaurantId": "burger-house"
     },
     {
       "name": "Laila",
       "date": "2017-02-02T18:25:43",
       "rating": 5,
-      "comments": "Melhor hambúrguer que já provei. Vai ser difícil voltar para mc e bk",
+      "comments": "Melhor hamburguer que ja provei. Vai ser dificil voltar para mc e bk",
       "restaurantId": "burger-house"
     },
     {
       "name": "Suzana",
       "date": "2016-12-12T18:25:43",
       "rating": 3.5,
-      "comments": "Meu sanduíche chegou frio e todo desmontado =\\",
+      "comments": "Meu sanduiche chegou frio e todo desmontado =\\",
       "restaurantId": "burger-house"
     },
     {
       "name": "Eric",
       "date": "2017-01-23T18:25:43",
       "rating": 4.5,
-      "comments": "Excelente opção! Recomendo!",
+      "comments": "Excelente opcao! Recomendo!",
       "restaurantId": "coffee-corner"
     },
     {
       "name": "Amanda",
       "date": "2017-02-02T18:25:43",
       "rating": 2.5,
-      "comments": "Demorou muito e o café veio gelado",
+      "comments": "Demorou muito e o cafeh veio gelado",
       "restaurantId": "coffee-corner"
     },
     {
@@ -73,42 +73,42 @@
       "name": "Rodrigo",
       "date": "2016-12-12T18:25:43",
       "rating": 4,
-      "comments": "Muito rápida a entrega, mas é caro.",
+      "comments": "Muito rapida a entrega, mas eh caro.",
       "restaurantId": "coffee-corner"
     },
     {
-      "name": "André",
+      "name": "Andreh",
       "date": "2016-12-12T18:25:43",
       "rating": 4.5,
       "comments": "Excelente como sempre!",
       "restaurantId": "coffee-corner"
     },
     {
-      "name": "João",
+      "name": "Joao",
       "date": "2017-01-23T18:25:43",
       "rating": 5,
-      "comments": "Excelente. Fiz o pedido com outro endereço e quando vi o erro liguei avisando. O motoqueiro cortou a cidade todinha e a comida ainda chegou quentinha (e deliciosa). Estou sempre pedindo e recomendando",
+      "comments": "Excelente. Fiz o pedido com outro endereco e quando vi o erro liguei avisando. O motoqueiro cortou a cidade todinha e a comida ainda chegou quentinha (e deliciosa). Estou sempre pedindo e recomendando",
       "restaurantId": "green-food"
     },
     {
       "name": "Marcelo",
       "date": "2017-02-02T18:25:43",
       "rating": 4.5,
-      "comments": "Chegou muito rápido, antes mesmo da previsão",
+      "comments": "Chegou muito rapido, antes mesmo da previsao",
       "restaurantId": "green-food"
     },
     {
       "name": "Fatinha",
       "date": "2017-01-23T18:25:43",
       "rating": 2,
-      "comments": "Ñ gostei dos sabores q pedi e achei o preço muito elevado",
+      "comments": "Nao gostei dos sabores q pedi e achei o preco muito elevado",
       "restaurantId": "ice-cream"
     },
     {
       "name": "Lucas",
       "date": "2017-02-02T18:25:43",
       "rating": 2.5,
-      "comments": "Esperar 1:45hr pra receber o pedido é INACEITÁVEL",
+      "comments": "Esperar 1:45hr pra receber o pedido eh INACEITaVEL",
       "restaurantId": "ice-cream"
     },
     {
@@ -122,7 +122,7 @@
       "name": "Ana",
       "date": "2017-01-23T18:25:43",
       "rating": 5,
-      "comments": "Rápido e sempre uma delicia!! Ja pedi 3x e sempre veio rapido e tudo certinho.",
+      "comments": "Rapido e sempre uma delicia!! Ja pedi 3x e sempre veio rapido e tudo certinho.",
       "restaurantId": "tasty-treats"
     },
     {
@@ -136,28 +136,28 @@
       "name": "Jarbas",
       "date": "2016-12-15T18:25:43",
       "rating": 4.7,
-      "comments": "Excelente e chegou muito rápido!",
+      "comments": "Excelente e chegou muito rapido!",
       "restaurantId": "tasty-treats"
     },
     {
       "name": "Rafaela",
       "date": "2017-01-12T18:25:43",
       "rating": 5,
-      "comments": "Chegou rápido e perfeito!",
+      "comments": "Chegou rapido e perfeito!",
       "restaurantId": "tasty-treats"
     },
     {
       "name": "Julia",
       "date": "2016-12-12T18:25:43",
       "rating": 1.5,
-      "comments": "Sempre gostei muito dos pedidos que eu fiz, mas dessa vez foi péssimo e decepcionou muito. Demorou 30min a mais pra chegar do que o tempo máximo esperado.",
+      "comments": "Sempre gostei muito dos pedidos que eu fiz, mas dessa vez foi pehssimo e decepcionou muito. Demorou 30min a mais pra chegar do que o tempo maximo esperado.",
       "restaurantId": "tasty-treats"
     },
     {
-      "name": "Marília",
+      "name": "Marilia",
       "date": "2016-12-20T18:25:43",
       "rating": 4.5,
-      "comments": "Taxa de entrega bastante elevada e precisa colocar no app se a pessoa quer porção adicional de algo (calda, crocante etc)",
+      "comments": "Taxa de entrega bastante elevada e precisa colocar no app se a pessoa quer porcao adicional de algo (calda, crocante etc)",
       "restaurantId": "tasty-treats"
     }
   ]

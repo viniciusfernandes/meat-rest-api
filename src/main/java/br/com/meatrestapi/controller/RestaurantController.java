@@ -17,6 +17,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import br.com.meatrestapi.model.MenuItem;
 import br.com.meatrestapi.model.Restaurant;
+import br.com.meatrestapi.model.Review;
 import br.com.meatrestapi.service.RestaurantService;
 
 @RestController
@@ -40,11 +41,22 @@ public class RestaurantController {
 		return restaurantService.findById(id);
 	}
 
+	@GetMapping(path = "/{id}/menu", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+	public @ResponseBody List<MenuItem> findMenuItemByIdRestaurant(@PathVariable String id) {
+		return restaurantService.findMenuItemByIdRestaurant(id);
+	}
+
+	@GetMapping(path = "/{id}/review", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+	public @ResponseBody List<Review> findReviewByIdRestaurant(@PathVariable String id) {
+		return restaurantService.findReviewByIdRestaurant(id);
+	}
+
 	@GetMapping("/load")
 	public void load() {
 		ObjectMapper o = new ObjectMapper();
 		List<Restaurant> lRestaurant = null;
 		List<MenuItem> lItem = null;
+		List<Review> lReview = null;
 		try {
 
 			lRestaurant = o.readValue(new File(
@@ -55,7 +67,12 @@ public class RestaurantController {
 					"C:\\Users\\vinicius\\ambiente_trabalho\\projetos\\springtool-workspace\\meat-rest-api\\menuItem.json"),
 					new TypeReference<List<MenuItem>>() {
 					});
-			restaurantService.load(lRestaurant, lItem);
+
+			lReview = o.readValue(new File(
+					"C:\\Users\\vinicius\\ambiente_trabalho\\projetos\\springtool-workspace\\meat-rest-api\\review.json"),
+					new TypeReference<List<Review>>() {
+					});
+			restaurantService.load(lRestaurant, lItem, lReview);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

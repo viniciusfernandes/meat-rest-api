@@ -1,5 +1,7 @@
 package br.com.meatrestapi.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
@@ -10,7 +12,7 @@ import javax.persistence.Transient;
 
 @Entity
 @Table(name = "tb_menu_item")
-public class MenuItem {
+public class MenuItem implements Serializable {
 	@Id
 	private String id;
 	private String name;

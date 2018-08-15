@@ -5,10 +5,11 @@ import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,10 +17,12 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import br.com.meatrestapi.model.MenuItem;
+import br.com.meatrestapi.model.Order;
 import br.com.meatrestapi.model.Restaurant;
 import br.com.meatrestapi.model.Review;
 import br.com.meatrestapi.service.RestaurantService;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/restaurants")
 public class RestaurantController {
@@ -31,27 +34,36 @@ public class RestaurantController {
 	@Autowired
 	private RestaurantService restaurantService;
 
-	@GetMapping(path = "", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-	public @ResponseBody List<Restaurant> findAll() {
+	@RequestMapping(method = RequestMethod.GET)
+	@ResponseBody
+	public List<Restaurant> findAll() {
 		return restaurantService.findAll();
 	}
 
-	@GetMapping(path = "/{id}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-	public @ResponseBody Restaurant findById(@PathVariable String id) {
+	@RequestMapping(path = "/{id}", method = RequestMethod.GET)
+	@ResponseBody
+	public Restaurant findById(@PathVariable String id) {
 		return restaurantService.findById(id);
 	}
 
-	@GetMapping(path = "/{id}/menu", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-	public @ResponseBody List<MenuItem> findMenuItemByIdRestaurant(@PathVariable String id) {
+	@RequestMapping(path = "/{id}/menu", method = RequestMethod.GET)
+	@ResponseBody
+	public List<MenuItem> findMenuItemByIdRestaurant(@PathVariable String id) {
 		return restaurantService.findMenuItemByIdRestaurant(id);
 	}
 
-	@GetMapping(path = "/{id}/review", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-	public @ResponseBody List<Review> findReviewByIdRestaurant(@PathVariable String id) {
+	@RequestMapping(path = "/order", method = RequestMethod.POST)
+	public Integer saveOrder(@RequestBody Order order) {
+		return restaurantService.saveOrder(order);
+	}
+
+	@RequestMapping(path = "/{id}/review", method = RequestMethod.GET)
+	@ResponseBody
+	public List<Review> findReviewByIdRestaurant(@PathVariable String id) {
 		return restaurantService.findReviewByIdRestaurant(id);
 	}
 
-	@GetMapping("/load")
+	@RequestMapping(path = "/load", method = RequestMethod.GET)
 	public void load() {
 		ObjectMapper o = new ObjectMapper();
 		List<Restaurant> lRestaurant = null;

@@ -20,6 +20,13 @@ public class MenuItem implements Serializable {
 	private String imagePath;
 	private String price;
 
+	public MenuItem() {
+	}
+
+	public MenuItem(String idMenu) {
+		this.id = idMenu;
+	}
+
 	@Transient
 	private String restaurantId;
 

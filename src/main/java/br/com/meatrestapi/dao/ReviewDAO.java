@@ -1,4 +1,4 @@
-package br.com.meatrestapi.service;
+package br.com.meatrestapi.dao;
 
 import java.util.List;
 

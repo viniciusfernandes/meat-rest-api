@@ -6,13 +6,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import br.com.meatrestapi.dao.MenuItemDAO;
+import br.com.meatrestapi.dao.OrderDAO;
+import br.com.meatrestapi.dao.OrderItemDAO;
+import br.com.meatrestapi.dao.RestaurantDAO;
+import br.com.meatrestapi.dao.ReviewDAO;
 import br.com.meatrestapi.model.MenuItem;
+import br.com.meatrestapi.model.Order;
+import br.com.meatrestapi.model.OrderItem;
 import br.com.meatrestapi.model.Restaurant;
 import br.com.meatrestapi.model.Review;
-import br.com.meatrestapi.service.MenuItemDAO;
-import br.com.meatrestapi.service.RestaurantDAO;
 import br.com.meatrestapi.service.RestaurantService;
-import br.com.meatrestapi.service.ReviewDAO;
 
 @Service
 public class RestaurantServiceImpl implements RestaurantService {
@@ -22,6 +26,10 @@ public class RestaurantServiceImpl implements RestaurantService {
 	private MenuItemDAO menuItemDAO;
 	@Autowired
 	private ReviewDAO reviewDAO;
+	@Autowired
+	private OrderDAO orderDAO;
+	@Autowired
+	private OrderItemDAO orderItemDAO;
 
 	@Override
 	public List<Restaurant> findAll() {
@@ -48,6 +56,25 @@ public class RestaurantServiceImpl implements RestaurantService {
 			m.setRestaurant(null);
 		}
 		return l;
+	}
+
+	@Override
+	@Transactional(readOnly = false)
+	public Integer saveOrder(Order order) {
+		Integer id = orderDAO.update(order).getId();
+		order.setId(id);
+
+		if (order.getOrderItems() != null) {
+			for (OrderItem item : order.getOrderItems()) {
+				if (item.getIdMenuItem() == null) {
+					throw new IllegalStateException("Um dos itens nao contem o id do item do menu");
+				}
+				item.setMenuItem(new MenuItem(item.getIdMenuItem()));
+				item.setOrder(order);
+				orderItemDAO.update(item);
+			}
+		}
+		return id;
 	}
 
 	@Override

@@ -20,4 +20,11 @@ public class MenuItemDAO extends AbstractDAO<MenuItem, String> {
 		return createQuery("select m from MenuItem m where m.restaurant.id= ?1", idRestaurant);
 	}
 
+	public List<MenuItem> findMenuItemStatisticsIdRestaurant(String idRestaurant) {
+		return createQuery(
+				"select new MenuItem(o.menuItem.description, o.menuItem.id, o.menuItem.imagePath, o.menuItem.name, o.menuItem.price, sum(o.quantity))  "
+						+ "from OrderItem o where o.menuItem.restaurant.id= ?1 group by o.menuItem.description, o.menuItem.imagePath, o.menuItem.id, o.menuItem.name, o.menuItem.price",
+				idRestaurant);
+	}
+
 }

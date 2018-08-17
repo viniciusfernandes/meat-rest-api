@@ -19,4 +19,6 @@ public interface RestaurantService {
 	List<Review> findReviewByIdRestaurant(String idRestaurant);
 
 	Integer saveOrder(Order order);
+
+	List<MenuItem> findMenuItemStatisticsIdRestaurant(String idRestaurant);
 }

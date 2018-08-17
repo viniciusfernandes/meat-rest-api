@@ -52,6 +52,12 @@ public class RestaurantController {
 		return restaurantService.findMenuItemByIdRestaurant(id);
 	}
 
+	@RequestMapping(path = "/{id}/menu/statistics", method = RequestMethod.GET)
+	@ResponseBody
+	public List<MenuItem> findMenuItemStatisticsIdRestaurant(@PathVariable String id) {
+		return restaurantService.findMenuItemStatisticsIdRestaurant(id);
+	}
+
 	@RequestMapping(path = "/order", method = RequestMethod.POST)
 	public Integer saveOrder(@RequestBody Order order) {
 		return restaurantService.saveOrder(order);

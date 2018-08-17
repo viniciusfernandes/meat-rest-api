@@ -18,9 +18,35 @@ public class MenuItem implements Serializable {
 	private String name;
 	private String description;
 	private String imagePath;
-	private String price;
+	private double price;
+	@Transient
+	private double qtySold;
+	@Transient
+	private double totValue;
+
+	public double getTotValue() {
+		return totValue;
+	}
+
+	public void calcTotValue() {
+
+		totValue = price * qtySold;
+	}
+
+	public void setTotValue(double totValue) {
+		this.totValue = totValue;
+	}
 
 	public MenuItem() {
+	}
+
+	public MenuItem(String description, String id, String imagePath, String name, double price, double qtySold) {
+		this.id = id;
+		this.name = name;
+		this.description = description;
+		this.imagePath = imagePath;
+		this.price = price;
+		this.qtySold = qtySold;
 	}
 
 	public MenuItem(String idMenu) {
@@ -29,6 +55,14 @@ public class MenuItem implements Serializable {
 
 	@Transient
 	private String restaurantId;
+
+	public double getQtySold() {
+		return qtySold;
+	}
+
+	public void setQtySold(double qtySold) {
+		this.qtySold = qtySold;
+	}
 
 	public Restaurant getRestaurant() {
 		return restaurant;
@@ -74,11 +108,11 @@ public class MenuItem implements Serializable {
 		this.description = description;
 	}
 
-	public String getPrice() {
+	public double getPrice() {
 		return price;
 	}
 
-	public void setPrice(String price) {
+	public void setPrice(double price) {
 		this.price = price;
 	}
 

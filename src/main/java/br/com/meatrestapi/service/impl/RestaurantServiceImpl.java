@@ -59,6 +59,15 @@ public class RestaurantServiceImpl implements RestaurantService {
 	}
 
 	@Override
+	public List<MenuItem> findMenuItemStatisticsIdRestaurant(String idRestaurant) {
+		List<MenuItem> lItem = menuItemDAO.findMenuItemStatisticsIdRestaurant(idRestaurant);
+		for (MenuItem i : lItem) {
+			i.calcTotValue();
+		}
+		return lItem;
+	}
+
+	@Override
 	@Transactional(readOnly = false)
 	public Integer saveOrder(Order order) {
 		Integer id = orderDAO.update(order).getId();
